@@ -1,0 +1,33 @@
+
+#title {
+    background-color: rgb(229, 202, 224);
+    padding-top: 50px;
+    text-align: center;
+    margin: 20px 20px;
+}
+
+#new-task {
+    margin: 20px 20px;
+    align-items: flex-end;
+}
+
+
+[class*="col"]{
+    background-color: rgb(174, 194, 146);
+    padding: 20px 20px;
+   
+    color: rgb(4, 2, 2);   
+    align-items: center;
+    width: 100rem;
+    height: 30rem;
+  }
+
+  #due-date {
+      padding-top: 4rem;
+  }
+
+  #buttom {
+    cursor: pointer;
+    text-align:start;
+    
+  }

@@ -1,5 +1,6 @@
 let tasks = new TaskManager();
 
+//4.2
 const validFormFieldInput = (e) => {
     e.preventDefault();
     const name = newTaskNameInput.value;
@@ -13,7 +14,7 @@ const validFormFieldInput = (e) => {
 
     document.getElementById("myForm").reset();
 };
-
+//4.3
 document.getElementById("button").addEventListener("click", function() {
     const name = newTaskNameInput.value;
     const description = newTaskDescriptionInput.value;

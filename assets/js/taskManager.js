@@ -1,3 +1,4 @@
+//6.1
 const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
     let doneButtonVisibility = 'visible'; 
     if (status === "Done") {
@@ -32,12 +33,12 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
 </li> `
 }
 
-
+// 5.2
 class TaskManager {
     constructor(tasks, currentId) {
         this.tasks = [];
         this.currentIDd = 0;
-    }
+    } //5.3
     addTask(name, description, assignedTo, dueDate, status = "ToDo") {
         this.currentId++;
         const newTask = {
@@ -50,6 +51,7 @@ class TaskManager {
     };
     this.tasks.push(newTask);
 }
+//6.2 - not finished
     render() {
         const taskHtmlList = [];
     }

@@ -15,7 +15,6 @@
 [class*="col"]{
     background-color: rgb(174, 194, 146);
     padding: 20px 20px;
-   
     color: rgb(4, 2, 2);   
     align-items: center;
     width: 100rem;
@@ -30,4 +29,15 @@
     cursor: pointer;
     text-align:start;
     
+  }
+
+  .bold {
+    font-weight:bold;
+  }
+
+  #cards {
+    background-color: rgb(229, 202, 224);
+    padding-top: 50px;
+    text-align: center;
+    margin: 20px 20px;
   }

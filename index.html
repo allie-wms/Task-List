@@ -13,7 +13,7 @@
 
 <body>
     <section>
-        <form action=" ">
+        <form id="myform" onsubmit="validFormFieldInput(event)" action=" ">
         <div class="container">
             <div class="row">
                 <h1 id="title">Task List</h1>
@@ -24,14 +24,14 @@
                 <div class="col-sm-9">
                     <h2>Add New Task</h2>
                     <h4>Task Name</h4>
-                    <input name="task-name" type="text"/>
+                    <input id="taskname" name="task-name" type="text"/>
                     <h4>Task Description</h4>
-                    <input type="text"/>
+                    <input id="taskdescription" type="text"/>
                     <h4>Assigned To:</h4>
-                    <input type="text"/>
+                    <input id="assignedto" type="text"/>
                     <hr>
-                    <!-- this is the 'add task' buttom -->
-                    <button id="buttom" type="button" class="btn btn-primary">
+                    <!-- this is the 'add task' button -->
+                    <button id="button" type="submit" class="addBtn btn btn-primary font" value ="Submit">
                     <h4>Add Task</h4>
                     <!-- this is the buttom closing tag -->
                 </button>
@@ -126,6 +126,8 @@
 
         </form>
     </section>
+    <script src="assets/js/taskManager.js"></script>   
+    <script src="assets/js/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
        
 </body>

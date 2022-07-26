@@ -54,6 +54,23 @@ class TaskManager {
 //6.2 - not finished
     render() {
         const taskHtmlList = [];
+
+        for (let task of this.tasks) {
+            let date = new Date(task.dueDate);
+            let formattedDate = date.getMonth() + date.getDate() + date.getFullYear();
+        }        
+
+        const taskHtml = createTaskHtml(
+            task.name,
+            task.description,
+            task.assignedTo,
+            task.formattedDate,
+            task.status,
+            task.id
+        );
+        taskHtmlList.push(taskHtml);
+        const tasksHtml = task.taskHtmlList.join('')
+        document.getElementById('task-list').innerHTML = tasksHtml;
     }
 }
 

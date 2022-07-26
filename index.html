@@ -31,30 +31,26 @@
                     <input id="task-description" type="text"/>
                     <h4>Assigned To:</h4>
                     <input id="assigned-to" type="text"/>
-                    <hr>
-                    <!-- this is the 'add task' buttom -->
+                 
+                    <div id="due-date" >
+                        <h3>Due Date</h3>
+                        <input type="date"/> <br>
+
+                    <!-- this is the 'add task' button -->
                     <button id="button" type="button" class="btn btn-primary" onclick="submitButton()">
                     <h4>Add Task</h4>
-                    <!-- this is the buttom closing tag -->
-                </button>
-                <div id="error">error</div> 
-                <div class="alert alert-danger" role="alert">
-                  </div>
-                <h4>Tasks</h4>
-                <textarea name="tasks" rows="3" cols="40">
-                Task Name
-                Task Description
-                Assigned To
-                Due Date
-                Status
-            </textarea>
+                    <!-- this is the button closing tag -->
+                    </button>
+                
+                    <div id ='error'></div> 
+                </div>
                     <!-- this is the col closing tag #1 -->
                 </div>
                 
-                <div id="due-date" class="col-sm-3">
+                <!-- <div id="due-date" class="col-sm-3">
                     <h3>Due Date</h3>
                     <input type="date"/>
-                    <hr>
+                    <hr> -->
                    
                     <!-- this is the col closing tag #2 -->
                 </div>
@@ -63,64 +59,21 @@
 
                 <!-- this is the row closing tag #3 -->
             </div>
-
+        </form>
+            
             <div id="cards" class="row">
                 <div class="col-sm-2">
                 <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Task Name</li>
-                      <li class="list-group-item">Task Description</li>
-                      <li class="list-group-item">Assigned To</li>
-                      <li class="list-group-item">Due Date</li>
+                    <ul id="task-list" class="list-group list-group-flush">
                     </ul>
                   </div>
                 <!-- this is the col closing #3-->
             </div>
 
-            <div class="col-sm-2">
-                  <!--Chariny Card  -->
-                  <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><span class="bold">Task Name:</span> Read book</li>
-                      <li class="list-group-item"><span class="bold">Task Description:</span> chapters 1-12</li>
-                      <li class="list-group-item"><span class="bold">Assigned To:</span> 06/01/2022</li>
-                      <li class="list-group-item"><span class="bold">Due Date:</span> 06/26/2022</li>
-                    </ul>
-                  </div>
-                   <!-- this is the col closing #4-->
-                </div>
+            
 
     
-                  <!-- Ally Card -->
-                   <li id="taskCard" class="list-group-item" data-task-id="3">
-                  <div class="card-body" id="data-task-id">
-                      <div class="alignment">
-                          <p class="card-text">
-                              <span class="fw-bold">Task Name: Allie's Card</span>
-                          </p>
-                          <button type="button">Mark as Done</button>
-                      </div>
-                      <p class="card-text">
-                          <span class="fw-bold">Task Description</span>
-                      </p>
-                      <p class="card-text">
-                          <span class="fw-bold"> Assigned To </span>
-                      </p>
-                      <p class="card-text">
-                          <span class="fw-bold"> Due Date</span>
-                      </p>
-                      <div class="alignment">
-                          <p class="card-text">
-                          <span class="fw-bold"> Status:</span>
-                          </p>
-                          <div class="move">
-                              <button type="button" class="btn btn-danger delete-button">Delete</button>
-                          </div>
-                      </div>
-                  </div>
-              </li>
-                  <!-- Amanuel Card -->
-                  <!-- Tavaris Card -->
+             
 
                 <!-- this is the rwo closing tag #4 -->
             </div>
@@ -129,8 +82,7 @@
 
 
 
-        </form>
-
+      
     </section>
     <script src="assets/js/taskManager.js"></script>   
     <script src="assets/js/script.js"></script>

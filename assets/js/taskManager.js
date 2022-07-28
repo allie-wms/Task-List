@@ -33,22 +33,22 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
 </li> `
 }
 
-// 5.2
-class TaskManager {
-    constructor(tasks, currentId) {
+// 5.2 
+export default class TaskManager {
+    constructor(currentId = 0) {
         this.tasks = [];
-        this.currentIDd = 0;
+        this.currentId = currentId;
     } //5.3
     addTask(name, description, assignedTo, dueDate, status = "ToDo") {
-        this.currentId++;
         const newTask = {
-       id: this.currentID++,
-       name,
-       description,
-       assignedTo,
-       dueDate,
-       status
+       id: this.currentId++,
+       name: name,
+       description: description,
+       assignedTo: assignedTo,
+       dueDate: dueDate,
+       status: status
     };
+
     this.tasks.push(newTask);
 }
 //6.2 - not finished
@@ -56,21 +56,21 @@ class TaskManager {
         const taskHtmlList = [];
 
         for (let task of this.tasks) {
-            let date = new Date(task.dueDate);
-            let formattedDate = date.getMonth() + date.getDate() + date.getFullYear();
+    
+            const taskHtml = createTaskHtml(
+                task.name,
+                task.description,
+                task.assignedTo,
+                task.dueDate,
+                task.status,
+                task.id
+            );
+            taskHtmlList.push(taskHtml);
+            const tasksHtml = taskHtmlList.join("")
+            document.getElementById('task-list').innerHTML = tasksHtml;
         }        
 
-        const taskHtml = createTaskHtml(
-            task.name,
-            task.description,
-            task.assignedTo,
-            task.formattedDate,
-            task.status,
-            task.id
-        );
-        taskHtmlList.push(taskHtml);
-        const tasksHtml = task.taskHtmlList.join('')
-        document.getElementById('task-list').innerHTML = tasksHtml;
+    
     }
 }
 

@@ -1,16 +1,17 @@
 //6.1
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
     let doneButtonVisibility = 'visible'; 
     if (status === "Done") {
         doneButtonVisibility = 'invisible';
     }
-    return `<li id="taskCard" class="list-group-item" data-task-id="3">
+    return `<li id="taskCard" class="list-group-item" data-task-id="${id}">
     <div class="card-body" id="data-task-id">
+
+    <button type="button" class="done-button">Mark As Done</button>
         <div class="alignment">
             <p class="card-text">
                 <span class="fw-bold">${name}</span>
             </p>
-            <button type="button">Mark as Done</button>
         </div>
         <p class="card-text">
             <span class="fw-bold">${description}</span>
@@ -68,9 +69,23 @@ export default class TaskManager {
             taskHtmlList.push(taskHtml);
             const tasksHtml = taskHtmlList.join("")
             document.getElementById('task-list').innerHTML = tasksHtml;
-        }        
-
+        }    
+    } 
+        getTaskById(taskId) {
     
-    }
-}
+            let foundTask = this.tasks.filter(task => {
+                if (task.id == taskId) {
+                    return task;
+                }
+            })
+
+          
+        
+            return foundTask;
+        }
+     }
+    
+   
+
+
 

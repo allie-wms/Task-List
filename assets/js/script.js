@@ -1,6 +1,7 @@
 import TaskManager from "./taskManager.js"
 let tasks = new TaskManager();
 
+
 const newTaskNameInput = document.getElementById('task-name');
 const newTaskDescriptionInput = document.getElementById('task-description');
 const newAssignedInput = document.getElementById('assigned-to');
@@ -61,10 +62,22 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     errorButton();
 });
 const taskList = document.getElementById('taskList');
+document.querySelector('taskList');
 
 
-
-
+//7 2.1-4
+const showInfo = document.querySelector ('#task-list');
+showInfo.addEventListener('click',(event) => {
+    if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+        const taskId = parentTask.dataset.taskId;
+        const task = tasks.getTaskById(taskId);
+        console.log(task);
+        task.status = 'DONE';
+        console.log(task.status);
+        tasks.render();
+    }
+});
 
 
 

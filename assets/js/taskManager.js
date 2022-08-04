@@ -48,10 +48,11 @@ export default class TaskManager {
        assignedTo: assignedTo,
        dueDate: dueDate,
        status: status
+    }
+    this.tasks.push(newTask);
     };
 
-    this.tasks.push(newTask);
-}
+//}
 //6.2 - not finished
     render() {
         const taskHtmlList = [];
@@ -79,11 +80,40 @@ export default class TaskManager {
                 }
             })
 
-          
-        
             return foundTask;
         }
+        save() {
+            const tasksJson = JSON.stringify(this.tasks);
+            localStorage.setItem("tasks", tasksJson);
+    
+            const currentId = this.currentId.toString();
+            localStorage.setItem("currentId", currentId);
+         }
+
+         load() {
+            if (localStorage.getItem("tasks")) {
+             let taskJson = localStorage.getItem("tasks");   
+             this.tasks = JSON.parse(taskJson);
+            }
+
+            if (localStorage.getItem("currentId")) {
+            let currentId = localStorage.getItem("currentId");
+            this.currentId = parseInt(currentId);
+         }
      }
+     //come back and delete the ;
+     deleteTask(taskId) {
+        let newTasks = [];
+        for (let i=0; i < this.tasks.length; i++) {
+            let task = this.tasks[i];
+
+            if (task.id !== taskId) {
+                newTasks.push(task);
+            } 
+        }
+        this.tasks = newTasks;
+     }
+    }
     
    
 

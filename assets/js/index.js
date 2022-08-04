@@ -1,5 +1,7 @@
 import TaskManager from "./taskManager.js"
 let tasks = new TaskManager();
+tasks.load();
+tasks.render();
 
 
 const newTaskNameInput = document.getElementById('task-name');
@@ -27,7 +29,7 @@ function submitButton() {
     console.log(dueDate);
     tasks.addTask(name, description, assigned, dueDate);
     console.log(tasks.tasks);
-    //tasks.save();
+    tasks.save();
     tasks.render();
 
 
@@ -75,9 +77,20 @@ showInfo.addEventListener('click',(event) => {
         console.log(task);
         task.status = 'DONE';
         console.log(task.status);
+    }
+    tasks.render();
+    tasks.save();
+
+    if (event.target.classList.contains("delete-button")) {
+        let parentTask = event.target.parentElement.parentElement;
+        let taskId = parseInt(parentTask.getAttribute("data-task-id"));
+        //document.getElementById("taskList").innerHTML = "";
+        tasks.deleteTask(taskId);
+        tasks.save();
         tasks.render();
     }
 });
+
 
 
 

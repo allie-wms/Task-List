@@ -7,7 +7,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
     return `<li id="taskCard" class="list-group-item" data-task-id="${id}">
     <div class="card-body" id="data-task-id">
 
-    <button type="button" class="done-button">Mark As Done</button>
+    <button type="button" class="done-button ${status === 'ToDo' ? 'visible' : 'invisible'}">Mark As Done</button>
         <div class="alignment">
             <p class="card-text">
                 <span class="fw-bold">${name}</span>
@@ -103,15 +103,22 @@ export default class TaskManager {
      }
      //come back and delete the ;
      deleteTask(taskId) {
-        let newTasks = [];
-        for (let i=0; i < this.tasks.length; i++) {
-            let task = this.tasks[i];
-
+        let newTasks = this.tasks.filter(task => {
             if (task.id !== taskId) {
-                newTasks.push(task);
-            } 
-        }
+                return task;
+            };
+        }); 
         this.tasks = newTasks;
+
+        if (this.tasks.length > 0) {
+            const newId = this.tasks.length + 1;
+            this.currentId = newId;
+            const currentId = newId.toString();
+            localStorage.setItem("currentId", currentId);
+        } else {
+            this.currentId = 0;
+            localStorage.setItem("currentId", '0');
+        }
      }
     }
     

@@ -10,6 +10,20 @@ const newAssignedInput = document.getElementById('assigned-to');
 const newDueDateInput = document.getElementById('due-date');
 const dateHeader = document.getElementById('date');
 
+const validFormFieldInput = (e) => {
+    e.preventDefault();
+    const name = newTaskNameInput.value;
+    const description = newTaskDescriptionInput.value;
+    const assigned = newAssignedInput.value;
+    const dueDate = newDueDateInput.value;
+
+    tasks.addTask(name, description, assigned, dueDate);
+    tasks.render();
+    tasks.save();
+
+    document.getElementById('myForm').reset();
+}
+
 const submitBtn = document.getElementById("submitBtn");
 console.log(submitBtn);
 //4.2
@@ -75,16 +89,22 @@ showInfo.addEventListener('click',(event) => {
         const taskId = parentTask.dataset.taskId;
         const task = tasks.getTaskById(taskId);
         console.log(task);
-        task.status = 'DONE';
-        console.log(task.status);
+        task.status = 'Done';
+        
+        if (task.status === 'Done') {
+            event.target.classList.remove('visible');
+            event.target.classList.add('invisible');
+        }
+        tasks.render();
+        tasks.save();
     }
-    tasks.render();
-    tasks.save();
+    //tasks.render();
+    //tasks.save();
 
     if (event.target.classList.contains("delete-button")) {
-        let parentTask = event.target.parentElement.parentElement;
+        let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         let taskId = parseInt(parentTask.getAttribute("data-task-id"));
-        //document.getElementById("taskList").innerHTML = "";
+        document.getElementById("taskCard").innerHTML = "";
         tasks.deleteTask(taskId);
         tasks.save();
         tasks.render();

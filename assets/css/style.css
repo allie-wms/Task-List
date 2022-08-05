@@ -1,25 +1,34 @@
 
 #title {
     background-color: rgb(229, 202, 224);
-    padding-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     text-align: center;
-    margin: 20px 20px;
+    /*margin: 10px 10px;*/
+    border-radius: 5px;
 }
 
-#new-task {
-    margin: 20px 20px;
-    align-items: flex-end;
+.row {
+  align-items: center;
 }
 
+.background {
+  background-color: rgb(174, 194, 146);
+}
 
-[class*="col"]{
+#newTask {
+    margin: 20px 20px;
+    text-align: center;
+}
+
+/*[class*="col"]{
     background-color: rgb(174, 194, 146);
     padding: 20px 20px;
     color: rgb(4, 2, 2);   
     align-items: center;
     width: 100rem;
     height: 30rem;
-  }
+  } */
 
   #due-date {
       padding-top: 4rem;
@@ -41,3 +50,5 @@
     text-align: center;
     margin: 20px 20px;
   }
+
+  

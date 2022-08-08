@@ -17,31 +17,32 @@
         <form id="myForm" onsubmit="validFormFieldInput(event)" action=" ">
         <!-- <div class="container"> -->
            <!-- <div class="row"> -->
-                <h1 id="title">Task List</h1>
+                <h1 id="title"> <b>Task List</b></h1>
                 <h2 id="date"></h2>
             <!-- this is the row closing tag #1-->
             </div>
 
             <div id="newTask" class="rowTask">
                 <!--<div class="col-sm-9"> -->
-                    <h2>Add New Task</h2>
-                    <h4>Task Name</h4>
+                    <h2> <b>Add New Task </b></h2> <br> <p>
+                    <h4>Task Name:</h4> </p>
 
-                    <input id="task-name" name="task-name" type="text"/>
-                    <h4>Task Description</h4>
-                    <input id="task-description" type="text"/>
-                    <h4>Assigned To:</h4>
-                    <input id="assigned-to" type="text"/>
+                    <input id="task-name" name="task-name" type="text"/> <p>
+                    <h4>Task Description:</h4> </p>
+                    <input id="task-description" type="text"/> <p>
+                    <h4>Assigned To:</h4> </p>
+                    <input id="assigned-to" type="text"/> <p>
                  
                     <div>
-                        <h3>Due Date</h3>
-                        <input id="due-date" type="date"/> <br>
+                        <h4>Due Date:</h4> </p>
+                        <input id="due-date" type="date"/> <br> <br>
 
                     <!-- this is the 'add task' button -->
-                    <button id="submitBtn" type="button" class="btn btn-primary"> <!-- onclick="submitButton()"> -->
+    
+                    <button id="submitBtn" type="button" class="btn btn-dark"> <!-- onclick="submitButton()"> -->
                     <h4>Add Task</h4>
                     <!-- this is the button closing tag -->
-                    </button>
+                    </button> <br> </br>
                 
                     <div id ='error'></div> 
                 </div>
@@ -64,7 +65,7 @@
             
             <div id="cards" class="row">
                 <div class="col-sm-2">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <ul id="task-list" class="list-group list-group-flush">
                     </ul>
                   </div>

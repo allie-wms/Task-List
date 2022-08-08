@@ -13,9 +13,11 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
                 <span class="fw-bold">${name}</span>
             </p>
         </div>
+        
         <p class="card-text">
             <span class="fw-bold">${description}</span>
         </p>
+        
         <p class="card-text">
             <span class="fw-bold">${assignedTo}</span>
         </p>
@@ -27,7 +29,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
             <span class="fw-bold"> ${status}</span>
             </p>
             <div class="move">
-                <button type="button" class="btn btn-danger delete-button">Delete</button>
+                <button type="button" class="btn btn-dark delete-button">Delete</button>
             </div>
         </div>
     </div>

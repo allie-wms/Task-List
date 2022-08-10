@@ -61,12 +61,12 @@ function errorButton() {
     
 
     if (name === "") {
-        document.querySelector('#error').innerHTML = `<div id="error" class="alert alert-danger" role="alert"> Please input name field! </div>`; 
+        document.querySelector('#error').innerHTML = `<div id="error" class="alert alert-light" role="alert"> Please input "Task Name" field! </div>`; 
     } else if (description === "") {
-        document.getElementById("error").innerHTML = `<div id="error" class="alert alert-danger" role="alert"> Please input description field! </div>`;
-    } else if (assigned === "") {document.getElementById("error").innerHTML = `<div id="error" class="alert alert-danger" role="alert"> Please input assigned field! </div>`;
+        document.getElementById("error").innerHTML = `<div id="error" class="alert alert-light" role="alert"> Please input "Task Description" field! </div>`;
+    } else if (assigned === "") {document.getElementById("error").innerHTML = `<div id="error" class="alert alert-light" role="alert"> Please input "Assigned To" field! </div>`;
   } else if (dueDate === "") {
-      document.getElementById("error").innerHTML = `<div id="error" class="alert alert-danger" role="alert"> Please input Due Date field! </div>`;
+      document.getElementById("error").innerHTML = `<div id="error" class="alert alert-light" role="alert"> Please input "Due Date" field! </div>`;
   } else {
       document.getElementById("error").innerHTML = ``
       submitButton();

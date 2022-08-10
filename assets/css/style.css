@@ -1,3 +1,6 @@
+.body {
+  
+}
 
 #title {
     background-color: rgb(229, 202, 224);
@@ -5,7 +8,7 @@
     padding-bottom: 25px;
     text-align: center;
     /*margin: 10px 10px;*/
-    border-radius: 5px;
+    outline: dashed;
 }
 
 .row {
@@ -14,11 +17,18 @@
 
 .background {
   background-color: rgb(174, 194, 146);
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #newTask {
     margin: 20px 20px;
     text-align: center;
+    padding: 4rem;
+    outline: auto;
+}
+
+#task-description {
+  width: 30rem;
 }
 
 /*[class*="col"]{
@@ -30,8 +40,14 @@
     height: 30rem;
   } */
 
-  #due-date {
+  /*#due-date {
       padding-top: 4rem;
+  } */
+
+  #submitBtn {
+    outline-style: solid;
+    padding-top: 10px;
+
   }
 
   #buttom {
@@ -46,9 +62,26 @@
 
   #cards {
     background-color: rgb(229, 202, 224);
-    padding-top: 50px;
+    padding: 50px;
     text-align: center;
-    margin: 20px 20px;
+    outline: dashed;
+    
   }
 
+  .card {
+    width: 74rem;
+    outline: solid;
+  }
+
+  .done-button {
+    width: 25rem;
+    margin: 20px;
+    
+  }
+
+
+
+  
+
+  
   
